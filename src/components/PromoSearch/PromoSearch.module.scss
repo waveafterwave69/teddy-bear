@@ -1,4 +1,5 @@
 .input {
+    width: 100%;
     &::placeholder {
         color: var(--color-grey);
         font-weight: 300;
@@ -13,11 +14,11 @@
         display: flex;
         justify-content: space-between;
         align-items: center;
-        column-gap: 10px;
+        column-gap: 15px;
         border: var(--border);
         border-radius: var(--border-radius);
         max-width: 586px;
         margin: 0 auto;
-        padding: 12px 15px;
+        padding: 12px 20px;
     }
 }

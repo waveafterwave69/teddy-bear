@@ -8,6 +8,24 @@
 }
 
 .item {
+    &__plusminus {
+        font-weight: 300;
+        font-size: 20px;
+        color: var(--color-white);
+        background-color: var(--color-red);
+        padding: 5px 44px;
+        border-radius: var(--border-radius);
+        display: flex;
+        align-items: center;
+        justify-content: space-around;
+        column-gap: 50px;
+
+        &__text {
+            font-size: 30px;
+            font-weight: 600;
+        }
+    }
+
     &__img {
         margin-bottom: 15px;
         height: 175px;

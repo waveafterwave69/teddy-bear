@@ -11,7 +11,6 @@ export default function PromoList() {
         const json2 = JSON.parse(json)
         const data = json2.catalogs
         setToys(data)
-        console.log(toys)
     }
 
     useEffect(() => {
@@ -21,8 +20,8 @@ export default function PromoList() {
     return (
         <>
             <ul className={styles.promo__list}>
-                {toys.map((toy) => (
-                    <li key={toy.id} className={styles.list__item}>
+                {toys.map((toy, index) => (
+                    <li key={index} className={styles.list__item}>
                         <ListIem {...toy} />
                     </li>
                 ))}
