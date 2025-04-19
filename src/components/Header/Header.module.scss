@@ -1,0 +1,9 @@
+.header {
+    background-color: var(--color-dark-red);
+    padding: 24px 0px;
+
+    &__row {
+        display: flex;
+        justify-content: space-between;
+    }
+}

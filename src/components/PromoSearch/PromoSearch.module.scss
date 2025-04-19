@@ -1,0 +1,23 @@
+.input {
+    &::placeholder {
+        color: var(--color-grey);
+        font-weight: 300;
+        font-size: 20px;
+    }
+
+    font-weight: 300;
+    font-size: 20px;
+
+    &__container {
+        text-align: center;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        column-gap: 10px;
+        border: var(--border);
+        border-radius: var(--border-radius);
+        max-width: 586px;
+        margin: 0 auto;
+        padding: 12px 15px;
+    }
+}
