@@ -5,6 +5,7 @@ import Korzina from '../Korzina/Korzina'
 import PromoList from '../PromoList/PromoList'
 
 export default function Promo() {
+    // :(
     return (
         <>
             <div className={styles.promo}>
