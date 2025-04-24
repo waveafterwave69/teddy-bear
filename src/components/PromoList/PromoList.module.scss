@@ -9,3 +9,10 @@
     margin-left: 280px;
     z-index: 100;
 }
+
+@media (max-width: 1650px) {
+    .promo__list {
+        margin-top: 0;
+        margin-left: 0;
+    }
+}

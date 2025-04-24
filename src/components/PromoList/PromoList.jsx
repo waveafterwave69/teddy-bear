@@ -5,7 +5,7 @@ import { json } from '../../api/data'
 import ListIem from '../ListIem/ListIem'
 
 let firstEl = 0
-let lastEl = 8
+let lastEl = 12
 
 export default function PromoList() {
     const [toys, setToys] = useState([])
@@ -17,7 +17,7 @@ export default function PromoList() {
     }
 
     const addToys = () => {
-        lastEl += 8
+        lastEl += 12
         getToys()
     }
 
