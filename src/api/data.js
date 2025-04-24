@@ -9,7 +9,8 @@ export const json = `{
             "name": "Акуленок",
             "price": "550",
             "startPrice": 0,
-            "count": "0",
+            "count": "1",
+            "show": false,
             "img": "${img1}",
             "width": "40 см",
             "height": "35 см"
@@ -20,7 +21,8 @@ export const json = `{
             "name": "Жираф",
             "startPrice": 0,
             "price": "670",
-            "count": "0",
+            "count": "1",
+            "show": false,
            "img": "${img2}",
             "width": "20 см",
             "height": "35 см"

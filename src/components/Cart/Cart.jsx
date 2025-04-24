@@ -1,0 +1,61 @@
+import styles from './Cart.module.scss'
+import { useSelector, useDispatch } from 'react-redux'
+import { removePersonToFav, setPersonToFav } from '../../store/actions'
+import cartImg from '../../img/cart2.svg'
+import { useEffect, useState } from 'react'
+
+import deleteImg from '../../img/delete.svg'
+
+export default function Korzina() {
+    const [els, setEls] = useState([])
+    const dispatch = useDispatch()
+    const storeData = useSelector((state) => state.favReducer)
+
+    useEffect(() => {
+        setEls(storeData)
+    })
+
+    const arr = Object.entries(els)
+
+    return (
+        <>
+            <div className={styles.card}>
+                <h2 className={styles.card__title}>
+                    <p>Корзина</p>
+                    <img src={cartImg} alt="" />
+                </h2>
+                <div className={styles.card__content}>
+                    <ul className={styles.cart__list}>
+                        {arr.map((el) => (
+                            <li key={el[0]} className={styles.cart__item}>
+                                <div className={styles.cart__item__anotherrow}>
+                                    <img
+                                        src={el[1].img}
+                                        alt=""
+                                        style={{ width: '75px' }}
+                                        className={styles.cart__item__img}
+                                    />
+                                    <div className={styles.cart__item__row}>
+                                        <p className={styles.cart__item__name}>
+                                            {el[1].name}
+                                        </p>
+                                        <p className={styles.cart__item__price}>
+                                            {el[1].price} ₽ ({el[1].count} шт.)
+                                        </p>
+                                    </div>
+                                </div>
+                                <button
+                                    onClick={() => {
+                                        dispatch(removePersonToFav([el[0]]))
+                                    }}
+                                >
+                                    <img src={deleteImg} alt="delete" />
+                                </button>
+                            </li>
+                        ))}
+                    </ul>
+                </div>
+            </div>
+        </>
+    )
+}
