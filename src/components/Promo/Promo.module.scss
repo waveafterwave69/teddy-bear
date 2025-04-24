@@ -3,7 +3,8 @@
 
     &__row {
         display: flex;
-        justify-content: space-between;
+        justify-content: center;
+        column-gap: 25px;
         margin-top: 30px;
         flex-wrap: wrap;
     }
