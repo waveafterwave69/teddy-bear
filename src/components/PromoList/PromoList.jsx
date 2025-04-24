@@ -4,13 +4,21 @@ import styles from './PromoList.module.scss'
 import { json } from '../../api/data'
 import ListIem from '../ListIem/ListIem'
 
+let firstEl = 0
+let lastEl = 8
+
 export default function PromoList() {
     const [toys, setToys] = useState([])
 
     const getToys = () => {
         const json2 = JSON.parse(json)
-        const data = json2.catalogs
+        const data = json2.catalogs.slice(firstEl, lastEl)
         setToys(data)
+    }
+
+    const addToys = () => {
+        lastEl += 8
+        getToys()
     }
 
     useEffect(() => {
@@ -25,6 +33,7 @@ export default function PromoList() {
                         <ListIem {...toy} />
                     </li>
                 ))}
+                <button onClick={addToys}>Ещё</button>
             </ul>
         </>
     )

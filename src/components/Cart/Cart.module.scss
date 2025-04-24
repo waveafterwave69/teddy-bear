@@ -1,4 +1,9 @@
 .card {
+    position: sticky;
+    top: 40px;
+    width: 100%;
+    // left: 0;
+
     &__title {
         display: flex;
         align-items: center;
