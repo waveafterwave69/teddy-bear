@@ -1,12 +1,18 @@
 import img1 from '../img/shark.png'
-import img2 from '../img/giraffe.png'
-import img3 from '../img/bear.png'
+import img2 from '../img/поросенок.png'
+import img3 from '../img/вороненок.png'
 import img4 from '../img/петух.png'
 import img5 from '../img/мопс.png'
 import img6 from '../img/зайка.png'
 import img7 from '../img/белочка.png'
 import img8 from '../img/енотик.png'
-import img9 from '../img/динозавр.png'
+import img9 from '../img/giraffe.png'
+import img10 from '../img/динозавр.png'
+import img11 from '../img/панда.png'
+import img12 from '../img/bear.png'
+import img13 from '../img/корова.png'
+import img14 from '../img/ленивец.png'
+import img15 from '../img/мышка.png'
 
 export const json = `{
     "catalogs": [
@@ -25,9 +31,9 @@ export const json = `{
         {
             "id": "2",
             "type": "Мягкая игрушка",
-            "name": "Жираф",
+            "name": "Поросенок",
             "startPrice": 0,
-            "price": "670",
+            "price": "410",
             "count": "1",
             "show": false,
            "img": "${img2}",
@@ -37,7 +43,7 @@ export const json = `{
         {
             "id": "3",
             "type": "Мягкая игрушка",
-            "name": "Медвежонок",
+            "name": "Вороненок",
             "startPrice": 0,
             "price": "470",
             "count": "1",
@@ -51,7 +57,7 @@ export const json = `{
             "type": "Мягкая игрушка",
             "name": "Петушок",
             "startPrice": 0,
-            "price": "360",
+            "price": "470",
             "count": "1",
             "show": false,
            "img": "${img4}",
@@ -109,9 +115,9 @@ export const json = `{
         {
             "id": "9",
             "type": "Мягкая игрушка",
-            "name": "Динозавр",
+            "name": "Жираф",
             "startPrice": 0,
-            "price": "500",
+            "price": "510",
             "count": "1",
             "show": false,
            "img": "${img9}",
@@ -123,134 +129,74 @@ export const json = `{
             "type": "Мягкая игрушка",
             "name": "Динозавр",
             "startPrice": 0,
-            "price": "500",
+            "price": "490",
             "count": "1",
             "show": false,
-           "img": "${img9}",
+           "img": "${img10}",
             "width": "20 см",
             "height": "35 см"
         },
         {
             "id": "11",
             "type": "Мягкая игрушка",
-            "name": "Динозавр",
+            "name": "Красная панда",
             "startPrice": 0,
-            "price": "500",
+            "price": "410",
             "count": "1",
             "show": false,
-           "img": "${img9}",
+           "img": "${img11}",
             "width": "20 см",
             "height": "35 см"
         },
         {
             "id": "12",
             "type": "Мягкая игрушка",
-            "name": "Динозавр",
+            "name": "Медвежонок",
             "startPrice": 0,
             "price": "500",
             "count": "1",
             "show": false,
-           "img": "${img9}",
+           "img": "${img12}",
             "width": "20 см",
             "height": "35 см"
         },
         {
             "id": "13",
             "type": "Мягкая игрушка",
-            "name": "Динозавр",
+            "name": "Коровка",
             "startPrice": 0,
-            "price": "500",
+            "price": "410",
             "count": "1",
             "show": false,
-           "img": "${img9}",
+           "img": "${img13}",
             "width": "20 см",
             "height": "35 см"
         },
         {
             "id": "14",
             "type": "Мягкая игрушка",
-            "name": "Динозавр",
+            "name": "Ленивец",
             "startPrice": 0,
-            "price": "500",
+            "price": "460",
             "count": "1",
             "show": false,
-           "img": "${img9}",
+           "img": "${img14}",
             "width": "20 см",
             "height": "35 см"
         },
         {
             "id": "15",
             "type": "Мягкая игрушка",
-            "name": "Динозавр",
+            "name": "Мышка",
             "startPrice": 0,
-            "price": "500",
+            "price": "320",
             "count": "1",
             "show": false,
-           "img": "${img9}",
-            "width": "20 см",
-            "height": "35 см"
-        },
-        {
-            "id": "16",
-            "type": "Мягкая игрушка",
-            "name": "Динозавр",
-            "startPrice": 0,
-            "price": "500",
-            "count": "1",
-            "show": false,
-           "img": "${img9}",
-            "width": "20 см",
-            "height": "35 см"
-        },
-        {
-            "id": "17",
-            "type": "Мягкая игрушка",
-            "name": "Динозавр",
-            "startPrice": 0,
-            "price": "500",
-            "count": "1",
-            "show": false,
-           "img": "${img9}",
-            "width": "20 см",
-            "height": "35 см"
-        },
-        {
-            "id": "18",
-            "type": "Мягкая игрушка",
-            "name": "Динозавр",
-            "startPrice": 0,
-            "price": "500",
-            "count": "1",
-            "show": false,
-           "img": "${img9}",
-            "width": "20 см",
-            "height": "35 см"
-        },
-        {
-            "id": "19",
-            "type": "Мягкая игрушка",
-            "name": "Динозавр",
-            "startPrice": 0,
-            "price": "500",
-            "count": "1",
-            "show": false,
-           "img": "${img9}",
-            "width": "20 см",
-            "height": "35 см"
-        },
-        {
-            "id": "20",
-            "type": "Мягкая игрушка",
-            "name": "Динозавр",
-            "startPrice": 0,
-            "price": "500",
-            "count": "1",
-            "show": false,
-           "img": "${img9}",
+           "img": "${img15}",
             "width": "20 см",
             "height": "35 см"
         }
-            
+        
     ]
 }
 `

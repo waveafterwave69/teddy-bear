@@ -12,7 +12,8 @@ export default function PromoList() {
 
     const getToys = () => {
         const json2 = JSON.parse(json)
-        const data = json2.catalogs.slice(firstEl, lastEl)
+        const data = json2.catalogs
+        // const data = json2.catalogs.slice(firstEl, lastEl)
         setToys(data)
     }
 
@@ -33,7 +34,7 @@ export default function PromoList() {
                         <ListIem {...toy} />
                     </li>
                 ))}
-                <button onClick={addToys}>Ещё</button>
+                {/* <button onClick={addToys}>Ещё</button> */}
             </ul>
         </>
     )
