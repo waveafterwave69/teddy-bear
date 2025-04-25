@@ -1,11 +1,25 @@
 import styles from './Header.module.scss'
-
+import { useDispatch, useSelector } from 'react-redux'
 import headerLogo from '../../img/header-logo.svg'
 import cartImg from '../../img/cart.svg'
 
 import { NavLink } from 'react-router-dom'
+import { useEffect, useState } from 'react'
 
 export default function Header() {
+    const storeData = useSelector((state) => state.favReducer)
+    const [totalCount, setTotalCount] = useState(0)
+    const arr = Object.entries(storeData)
+    let total = 0
+
+    useEffect(() => {
+        arr.forEach((el) => {
+            total += Number(el[1].count)
+        })
+
+        setTotalCount(total)
+    })
+
     return (
         <>
             <header className={styles.header}>
@@ -18,12 +32,17 @@ export default function Header() {
                                 alt="Логотип"
                             />
                         </NavLink>
-                        <NavLink to="/cart">
+                        <NavLink to="/cart" className={styles.header__relative}>
                             <img
                                 src={cartImg}
                                 className={styles.header__cart}
                                 alt="Корзина"
                             />
+                            {totalCount > 0 && (
+                                <div className={styles.header__relative__count}>
+                                    {totalCount}
+                                </div>
+                            )}
                         </NavLink>
                     </div>
                 </div>

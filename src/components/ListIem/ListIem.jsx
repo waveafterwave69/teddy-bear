@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react'
+import {  useState } from 'react'
 import styles from './ListIem.module.scss'
 
 import { useDispatch, useSelector } from 'react-redux'

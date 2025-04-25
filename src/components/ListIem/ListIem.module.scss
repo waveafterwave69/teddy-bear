@@ -13,12 +13,13 @@
         font-size: 20px;
         color: var(--color-white);
         background-color: var(--color-red);
-        padding: 4.5px 43.5px;
+        width: 225px;
+        padding: 4.5px 0px;
         border-radius: var(--border-radius);
         display: flex;
         align-items: center;
-        justify-content: space-around;
-        column-gap: 50px;
+        justify-content: center;
+        column-gap: 40px;
 
         &__text {
             font-size: 30px;
@@ -48,9 +49,10 @@
     &__button {
         font-weight: 300;
         font-size: 20px;
+        width: 225px;
         color: var(--color-white);
         background-color: var(--color-dark-red);
-        padding: 10px 67px;
+        padding: 10px 0px;
         border-radius: var(--border-radius);
 
         &:hover {
@@ -149,7 +151,11 @@
     .item {
         &__plusminus {
             font-size: 18px;
-            padding: 1px 24px;
+            padding: 0px;
+            width: 133px;
+            display: flex;
+            justify-content: center;
+            padding: 1px 0px;
             column-gap: 25px;
             &__text {
                 font-size: 28px;
@@ -174,12 +180,13 @@
 
         &__button {
             font-size: 16px;
-            padding: 8px 30.3px;
+            padding: 8px 0px;
+            width: 133px;
         }
     }
 
     .count {
-        font-size: 20px;
+        font-size: 18px;
         width: 35px;
         height: 35px;
         top: 17px;
