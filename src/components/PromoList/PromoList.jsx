@@ -7,8 +7,6 @@ import ListIem from '../ListIem/ListIem'
 let firstEl = 0
 let lastEl = 12
 
-//
-
 export default function PromoList() {
     const [toys, setToys] = useState([])
 

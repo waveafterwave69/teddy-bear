@@ -1,4 +1,4 @@
-import styles from './Cart.module.scss'
+import styles from './CartPagee.module.scss'
 import { useSelector, useDispatch } from 'react-redux'
 import { removePersonToFav } from '../../store/actions'
 import cartImg from '../../img/cart2.svg'
@@ -6,7 +6,7 @@ import { useEffect, useState } from 'react'
 
 import deleteImg from '../../img/delete.svg'
 
-export default function Korzina() {
+export default function CartPagee() {
     const [els, setEls] = useState([])
     const dispatch = useDispatch()
     const storeData = useSelector((state) => state.favReducer)
