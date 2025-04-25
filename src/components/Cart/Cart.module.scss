@@ -1,6 +1,10 @@
+.display__none {
+    display: none;
+}
+
 .card {
     position: sticky;
-    top: 40px;
+    top: 30px;
     width: 100%;
     // left: 0;
 
@@ -71,6 +75,7 @@
     &__total {
         background-color: var(--color-light-grey);
         width: 334px;
+        height: 129px;
         z-index: 10;
         padding: 20px;
         border-bottom-left-radius: var(--border-radius);

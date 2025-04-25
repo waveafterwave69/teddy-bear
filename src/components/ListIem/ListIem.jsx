@@ -66,12 +66,7 @@ export default function ListIem(props) {
         <>
             <div className={styles.card}>
                 <a href="#" className={styles.list__link}>
-                    <img
-                        src={props.img}
-                        alt=""
-                        className={styles.item__img}
-                        style={{ width: '175px' }}
-                    />
+                    <img src={props.img} alt="" className={styles.item__img} />
                     {storeData[props.id] && (
                         <div className={styles.count}>
                             {storeData[props.id].count}

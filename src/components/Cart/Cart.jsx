@@ -62,10 +62,16 @@ export default function Korzina() {
                     </ul>
                 </div>
                 <div className={styles.cart__total}>
-                    <p className={styles.cart__total__text}>Итого: {total} ₽</p>
-                    <button className={styles.cart__total__button}>
-                        Оплатить
-                    </button>
+                    {arr.length > 0 && (
+                        <p className={styles.cart__total__text}>
+                            Итого: {total} ₽
+                        </p>
+                    )}
+                    {arr.length > 0 && (
+                        <button className={styles.cart__total__button}>
+                            Оплатить
+                        </button>
+                    )}
                 </div>
             </div>
         </>

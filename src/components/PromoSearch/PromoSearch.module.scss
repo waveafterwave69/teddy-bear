@@ -22,3 +22,19 @@
         padding: 12px 20px;
     }
 }
+
+@media (max-width: 550px) {
+    .input {
+        &::placeholder {
+            font-size: 18px;
+        }
+
+        font-size: 18px;
+
+        &__container {
+            column-gap: 15px;
+            max-width: 586px;
+            padding: 8px 15px;
+        }
+    }
+}

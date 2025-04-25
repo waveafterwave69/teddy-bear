@@ -1,9 +1,11 @@
-.card {
-    position: sticky;
-    top: 40px;
-    width: 100%;
-    // left: 0;
+.da {
+    display: flex;
+    justify-content: center;
+    margin: 0 auto;
+    align-items: center;
+}
 
+.card {
     &__title {
         display: flex;
         align-items: center;
@@ -18,7 +20,7 @@
         background-color: var(--color-light-grey);
         border-top-left-radius: var(--border-radius);
         border-top-right-radius: var(--border-radius);
-        width: 334px;
+        width: 500px;
         height: 507px;
         overflow: auto;
     }
@@ -43,6 +45,7 @@
             background-color: var(--color-white);
             padding: 8px;
             border-radius: var(--border-radius);
+            width: 75px;
         }
 
         &__name {
@@ -70,7 +73,8 @@
 
     &__total {
         background-color: var(--color-light-grey);
-        width: 334px;
+        width: 500px;
+        height: 129px;
         z-index: 10;
         padding: 20px;
         border-bottom-left-radius: var(--border-radius);
@@ -100,6 +104,75 @@
             font-weight: 300;
             font-size: 24px;
             margin-bottom: 10px;
+        }
+    }
+}
+
+@media (max-width: 550px) {
+    .card {
+        &__title {
+            display: flex;
+            align-items: center;
+            column-gap: 5px;
+            font-weight: 600;
+            font-size: 28px;
+            margin-bottom: 8px;
+
+            & img {
+                width: 25px;
+            }
+        }
+
+        &__content {
+            padding: 20px;
+            width: 300px;
+            height: 380px;
+        }
+    }
+
+    .cart {
+        &__list {
+            row-gap: 15px;
+        }
+
+        &__item {
+            column-gap: 15px;
+            padding-bottom: 15px;
+
+            &__img {
+                padding: 5px;
+                width: 60px;
+            }
+
+            &__name {
+                font-size: 16px;
+                margin-bottom: 3px;
+            }
+
+            &__price {
+                font-size: 16px;
+            }
+
+            &__anotherrow {
+                column-gap: 10px;
+            }
+        }
+
+        &__total {
+            width: 300px;
+            height: 120px;
+            padding: 20px;
+
+            &__button {
+                padding: 10px 75px;
+                width: 100%;
+                font-size: 22px;
+            }
+
+            &__text {
+                font-size: 21px;
+                margin-bottom: 8px;
+            }
         }
     }
 }

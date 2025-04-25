@@ -1,9 +1,33 @@
 .header {
+    width: 100%;
     background-color: var(--color-dark-red);
     padding: 24px 0px;
 
     &__row {
         display: flex;
         justify-content: space-between;
+        align-items: center;
+    }
+}
+
+@media (max-width: 1650px) {
+    .header {
+        position: sticky;
+        top: 0px;
+        z-index: 1001;
+    }
+}
+
+@media (max-width: 872px) {
+    .header {
+        padding: 10px 0px;
+
+        &__logo {
+            width: 150px;
+        }
+
+        &__cart {
+            width: 30px;
+        }
     }
 }
