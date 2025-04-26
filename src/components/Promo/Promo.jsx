@@ -1,6 +1,5 @@
 import styles from './Promo.module.scss'
 
-import PromoSearch from '../PromoSearch/PromoSearch'
 import Cart from '../Cart/Cart'
 import PromoList from '../PromoList/PromoList'
 import { useEffect, useState } from 'react'
@@ -23,7 +22,6 @@ export default function Promo() {
         <>
             <div className={styles.promo}>
                 <div className="container">
-                    <PromoSearch />
                     <div className={styles.promo__content}>
                         <div className={styles.promo__row}>
                             <Cart {...toys} />

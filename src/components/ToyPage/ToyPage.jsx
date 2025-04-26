@@ -28,12 +28,6 @@ export default function ToyPage() {
         window.location.hash = '#top'
     }, [])
 
-    window.scrollTo({
-        top: 0,
-        left: 0,
-        behavior: 'smooth',
-    })
-
     function addToy() {
         dispatch(
             setPersonToFav({
