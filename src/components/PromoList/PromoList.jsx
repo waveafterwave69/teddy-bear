@@ -66,15 +66,15 @@ export default function PromoList() {
                                 <ListIem {...toy} />
                             </li>
                         ))}
-                    {searchResults.length > 0 ? (
+                    {searchResults.length > 0 &&
                         searchResults.map((toy, index) => (
                             <li key={index} className={styles.list__item}>
                                 <ListIem {...toy} />
                             </li>
-                        ))
-                    ) : (
+                        ))}
+                    {(searchResults.length == 0) & (searchTerm.length !== 0) ? (
                         <p>Ничего не найдено</p>
-                    )}
+                    ) : null}
                     {/* <button onClick={addToys}>Ещё</button> */}
                 </ul>
             </div>
