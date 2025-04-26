@@ -26,7 +26,7 @@ export default function Korzina() {
 
     return (
         <>
-            <div className={styles.card}>
+            <div className={styles.card} data-aos="fade-right">
                 <h2 className={styles.card__title}>
                     <p>Корзина</p>
                     <img src={cartImg} alt="" />

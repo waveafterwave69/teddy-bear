@@ -74,12 +74,13 @@ export default function ToyPage() {
         <>
             <div className={styles.item}>
                 <button
+                    data-aos="fade-right"
                     className={styles.item__prevButton}
                     onClick={() => navigate(-1)}
                 >
                     Назад
                 </button>
-                <div className={styles.item__row}>
+                <div className={styles.item__row} data-aos="fade-left">
                     <Cart />
                     <div className={styles.item__content}>
                         <div className={styles.relative}>

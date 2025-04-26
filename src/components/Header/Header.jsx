@@ -22,7 +22,7 @@ export default function Header() {
 
     return (
         <>
-            <header className={styles.header}>
+            <header className={styles.header} data-aos="fade-down">
                 <div className="container">
                     <div className={styles.header__row}>
                         <NavLink to="/">

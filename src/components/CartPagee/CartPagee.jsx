@@ -25,7 +25,7 @@ export default function CartPagee() {
 
     return (
         <>
-            <div className={styles.da}>
+            <div className={styles.da} data-aos="fade-up">
                 <div className={styles.card}>
                     <h2 className={styles.card__title}>
                         <p>Корзина</p>
