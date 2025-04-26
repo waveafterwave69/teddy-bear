@@ -13,6 +13,7 @@ import img12 from '../img/bear.png'
 import img13 from '../img/корова.png'
 import img14 from '../img/ленивец.png'
 import img15 from '../img/мышка.png'
+import img16 from '../img/cat.png'
 
 export const json = `{
     "catalogs": [
@@ -193,6 +194,18 @@ export const json = `{
             "count": "1",
             "show": false,
            "img": "${img15}",
+            "width": "20 см",
+            "height": "35 см"
+        },
+        {
+            "id": "16",
+            "type": "Мягкая игрушка",
+            "name": "Кот",
+            "startPrice": 0,
+            "price": "550",
+            "count": "1",
+            "show": false,
+           "img": "${img16}",
             "width": "20 см",
             "height": "35 см"
         }

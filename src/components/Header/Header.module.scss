@@ -1,5 +1,6 @@
 .header {
     width: 100%;
+    margin-bottom: 100px;
     background-color: var(--color-dark-red);
     padding: 24px 0px;
 
@@ -35,6 +36,7 @@
 
 @media (max-width: 1650px) {
     .header {
+        margin-bottom: 35px;
         position: sticky;
         top: 0px;
         z-index: 1001;
