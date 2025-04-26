@@ -1,4 +1,4 @@
-import {  useState } from 'react'
+import { useState } from 'react'
 import styles from './ListIem.module.scss'
 
 import { useDispatch, useSelector } from 'react-redux'
@@ -10,6 +10,8 @@ export default function ListIem(props) {
 
     const [count, setCount] = useState(Number(props.count))
     const [price, setPrice] = useState(Number(props.startPrice))
+
+    const arr = Object.entries(storeData)
 
     function addToy() {
         setPrice(Number(props.price))
@@ -30,12 +32,14 @@ export default function ListIem(props) {
     function addOneToy() {
         setCount((prev) => prev + 1)
         setPrice((prev) => prev + Number(props.price))
+        console.log(storeData[props.id].count)
         dispatch(
             setPersonToFav({
                 [props.id]: {
                     name: props.name,
-                    price: price + Number(props.price),
-                    count: count + 1,
+                    price:
+                        Number(storeData[props.id].price) + Number(props.price),
+                    count: Number(storeData[props.id].count) + 1,
                     img: props.img,
                 },
             })
@@ -43,7 +47,7 @@ export default function ListIem(props) {
     }
 
     function minusOneToy() {
-        if (count == 1) {
+        if (storeData[props.id].count == 1) {
             setPrice((prev) => prev - Number(props.price))
             dispatch(removePersonToFav(props.id))
         } else {
@@ -53,8 +57,10 @@ export default function ListIem(props) {
                 setPersonToFav({
                     [props.id]: {
                         name: props.name,
-                        price: price - Number(props.price),
-                        count: count - 1,
+                        price:
+                            Number(storeData[props.id].price) -
+                            Number(props.price),
+                        count: Number(storeData[props.id].count) - 1,
                         img: props.img,
                     },
                 })

@@ -1,5 +1,6 @@
 import { omit } from 'lodash'
-const initialState = {}
+import { getLocalStorage } from '../../utils/localStorage'
+const initialState = getLocalStorage('store')
 
 const cartReducer = (state = initialState, action) => {
     switch (action.type) {
