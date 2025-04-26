@@ -7,21 +7,22 @@ import { useEffect, useState } from 'react'
 import deleteImg from '../../img/delete.svg'
 
 export default function Korzina() {
-    const [els, setEls] = useState([])
     const dispatch = useDispatch()
-    const storeData = useSelector((state) => state.favReducer)
+    let storeData = useSelector((state) => state.favReducer)
 
-    useEffect(() => {
-        setEls(storeData)
-    })
-
-    const arr = Object.entries(els)
-
+    let arr = Object.entries(storeData)
     let total = 0
 
     arr.forEach((el) => {
         total += Number(el[1].price)
     })
+
+    const buyToy = () => {
+        arr.forEach((el) => {
+            dispatch(removePersonToFav(el[0]))
+            console.log(el)
+        })
+    }
 
     return (
         <>
@@ -68,7 +69,10 @@ export default function Korzina() {
                         </p>
                     )}
                     {arr.length > 0 && (
-                        <button className={styles.cart__total__button}>
+                        <button
+                            onClick={buyToy}
+                            className={styles.cart__total__button}
+                        >
                             Оплатить
                         </button>
                     )}

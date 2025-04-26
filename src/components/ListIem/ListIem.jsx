@@ -1,22 +1,14 @@
-import { useState } from 'react'
 import styles from './ListIem.module.scss'
 
 import { useDispatch, useSelector } from 'react-redux'
 import { removePersonToFav, setPersonToFav } from '../../store/actions'
+import { Link } from 'react-router-dom'
 
 export default function ListIem(props) {
     const dispatch = useDispatch()
     const storeData = useSelector((state) => state.favReducer)
 
-    const [count, setCount] = useState(Number(props.count))
-    const [price, setPrice] = useState(Number(props.startPrice))
-
-    const arr = Object.entries(storeData)
-
     function addToy() {
-        setPrice(Number(props.price))
-        setCount(1)
-
         dispatch(
             setPersonToFav({
                 [props.id]: {
@@ -30,9 +22,6 @@ export default function ListIem(props) {
     }
 
     function addOneToy() {
-        setCount((prev) => prev + 1)
-        setPrice((prev) => prev + Number(props.price))
-        console.log(storeData[props.id].count)
         dispatch(
             setPersonToFav({
                 [props.id]: {
@@ -48,11 +37,8 @@ export default function ListIem(props) {
 
     function minusOneToy() {
         if (storeData[props.id].count == 1) {
-            setPrice((prev) => prev - Number(props.price))
             dispatch(removePersonToFav(props.id))
         } else {
-            setCount((prev) => prev - 1)
-            setPrice((prev) => prev - Number(props.price))
             dispatch(
                 setPersonToFav({
                     [props.id]: {
@@ -71,14 +57,14 @@ export default function ListIem(props) {
     return (
         <>
             <div className={styles.card}>
-                <a href="#" className={styles.list__link}>
+                <Link to={`/${props.id}`} className={styles.list__link}>
                     <img src={props.img} alt="" className={styles.item__img} />
                     {storeData[props.id] && (
                         <div className={styles.count}>
                             {storeData[props.id].count}
                         </div>
                     )}
-                </a>
+                </Link>
                 <h3 className={styles.item__title}>{props.name}</h3>
                 <p className={styles.item__price}>{props.price} ₽</p>
 

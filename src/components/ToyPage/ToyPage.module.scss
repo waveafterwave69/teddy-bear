@@ -1,0 +1,304 @@
+.item {
+    margin-top: 25px;
+
+    &__prevButton {
+        font-weight: 600;
+        font-size: 26px;
+        color: var(--color-white);
+        background-color: var(--color-dark-red);
+        border-radius: var(--border-radius);
+        padding: 10px 50px;
+        margin-bottom: 25px;
+
+        &:hover {
+            background-color: var(--color-red);
+            box-shadow: 0px 0px 8px var(--color-red);
+        }
+
+        &:active {
+            position: relative;
+            top: 2px;
+        }
+    }
+
+    &__row {
+        display: flex;
+        align-items: center;
+    }
+
+    &__content {
+        z-index: 200;
+        display: flex;
+        align-items: center;
+        margin-left: -1200px;
+        margin-top: -150px;
+
+        &__img {
+            width: 550px;
+        }
+
+        &__title {
+            font-weight: 600;
+            max-width: 430px;
+            font-size: 42px;
+            margin-bottom: 10px;
+        }
+
+        &__price {
+            font-weight: 600;
+            font-size: 38px;
+            margin-bottom: 25px;
+        }
+
+        &__params {
+            display: flex;
+            flex-direction: column;
+            row-gap: 5px;
+            margin-bottom: 100px;
+
+            & p {
+                font-weight: 400;
+                font-size: 16px;
+                color: var(--color-grey);
+            }
+        }
+    }
+}
+
+.relative {
+    position: relative;
+}
+
+.count {
+    position: absolute;
+    font-size: 33px;
+    z-index: 100;
+    width: 75px;
+    height: 75px;
+    border-radius: 350px;
+    background-color: var(--color-red);
+    top: 100px;
+    right: 120px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--color-white);
+}
+
+.item {
+    &__plusminus {
+        font-weight: 300;
+        font-size: 24px;
+        color: var(--color-white);
+        background-color: var(--color-red);
+        width: 225px;
+        height: 60px;
+        padding: 4.5px 0px;
+        border-radius: var(--border-radius);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        column-gap: 40px;
+
+        &__text {
+            font-size: 32px;
+            font-weight: 600;
+        }
+    }
+
+    &__button {
+        font-weight: 300;
+        font-size: 24px;
+        width: 225px;
+        height: 60px;
+        color: var(--color-white);
+        background-color: var(--color-dark-red);
+        padding: 10px 0px;
+        border-radius: var(--border-radius);
+
+        &:hover {
+            background-color: var(--color-red);
+            box-shadow: 0px 0px 8px var(--color-red);
+        }
+
+        &:active {
+            position: relative;
+            top: 2px;
+        }
+    }
+}
+
+.plus {
+    font-weight: 600;
+}
+
+@media (max-width: 1650px) {
+    .item {
+        &__content {
+            display: flex;
+            margin-left: 0px;
+            justify-content: center;
+            margin: 0 auto;
+        }
+    }
+}
+
+@media (max-width: 1000px) {
+    .item {
+        margin-top: 25px;
+
+        &__prevButton {
+            font-weight: 600;
+            font-size: 22px;
+            padding: 10px 40px;
+            margin-bottom: 20px;
+        }
+
+        &__content {
+            &__img {
+                width: 350px;
+            }
+
+            &__title {
+                max-width: 330px;
+                font-size: 32px;
+                margin-bottom: 5px;
+            }
+
+            &__price {
+                font-size: 28px;
+                margin-bottom: 20px;
+            }
+
+            &__params {
+                row-gap: 5px;
+                margin-bottom: 45px;
+
+                & p {
+                    font-size: 16px;
+                }
+            }
+        }
+    }
+
+    .count {
+        font-size: 28px;
+        z-index: 100;
+        width: 60px;
+        height: 60px;
+        top: 75px;
+        right: 60px;
+    }
+
+    .item {
+        &__plusminus {
+            font-weight: 300;
+            font-size: 22px;
+            width: 195px;
+            height: 50px;
+            padding: 4.5px 0px;
+            column-gap: 40px;
+
+            &__text {
+                font-size: 28px;
+            }
+        }
+
+        &__button {
+            font-weight: 300;
+            font-size: 22px;
+            width: 195px;
+            height: 50px;
+            padding: 10px 0px;
+        }
+    }
+
+    .plus {
+        font-weight: 600;
+    }
+}
+
+@media (max-width: 650px) {
+    .item {
+        margin-top: 25px;
+
+        &__content {
+            flex-direction: column;
+            align-items: flex-start;
+            row-gap: 10px;
+        }
+
+        &__prevButton {
+            font-weight: 600;
+            font-size: 20px;
+            padding: 8px 35px;
+            margin-bottom: 10px;
+        }
+
+        &__content {
+            margin: 0;
+            margin: 0 auto;
+            &__img {
+                width: 270px;
+                margin: 0 auto;
+                display: flex;
+                justify-content: center;
+            }
+
+            &__title {
+                max-width: 330px;
+                font-size: 28px;
+                margin-bottom: 5px;
+            }
+
+            &__price {
+                font-size: 28px;
+                margin-bottom: 20px;
+            }
+
+            &__params {
+                row-gap: 5px;
+                margin-bottom: 25px;
+
+                & p {
+                    font-size: 16px;
+                }
+            }
+        }
+    }
+
+    .count {
+        font-size: 28px;
+        z-index: 100;
+        width: 60px;
+        height: 60px;
+        top: 55px;
+        right: 40px;
+    }
+
+    .item {
+        &__plusminus {
+            font-weight: 300;
+            font-size: 22px;
+            width: 195px;
+            height: 50px;
+            padding: 4.5px 0px;
+            column-gap: 40px;
+            &__text {
+                font-size: 28px;
+            }
+        }
+
+        &__button {
+            font-weight: 300;
+            font-size: 22px;
+            width: 195px;
+            height: 50px;
+            padding: 10px 0px;
+        }
+    }
+
+    .plus {
+        font-weight: 600;
+    }
+}
