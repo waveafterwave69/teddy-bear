@@ -28,7 +28,7 @@ export default function PromoList() {
 
     return (
         <>
-            <ul className={styles.promo__list} data-aos="fade-left">
+            <ul className={styles.promo__list}>
                 {toys.map((toy, index) => (
                     <li key={index} className={styles.list__item}>
                         <ListIem {...toy} />

@@ -5,7 +5,7 @@ import searchInput from '../../img/search.svg'
 export default function PromoSearch() {
     return (
         <>
-            <div className={styles.input__container} data-aos="flip-left">
+            <div className={styles.input__container}>
                 <input
                     type="text"
                     className={styles.input}

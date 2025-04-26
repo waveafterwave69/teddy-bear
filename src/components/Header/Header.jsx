@@ -22,6 +22,7 @@ export default function Header() {
 
     return (
         <>
+            <a id="top"></a>
             <header className={styles.header} data-aos="fade-down">
                 <div className="container">
                     <div className={styles.header__row}>

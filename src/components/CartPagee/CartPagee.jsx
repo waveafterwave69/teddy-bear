@@ -19,7 +19,6 @@ export default function CartPagee() {
     const buyToy = () => {
         arr.forEach((el) => {
             dispatch(removePersonToFav(el[0]))
-            console.log(el)
         })
     }
 

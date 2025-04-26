@@ -15,19 +15,20 @@
         &__count {
             position: absolute;
             font-size: 18px;
-            box-shadow: 0px 0px 4px var(--color-white);
+            border: 2px solid var(--color-dark-red);
             z-index: 100;
-            width: 30px;
-            height: 30px;
+            width: 35px;
+            height: 35px;
             border-radius: 350px;
-            background-color: var(--color-red);
+            background-color: var(--color-white);
             top: 0px;
             padding-top: 1px;
             right: -10px;
             display: flex;
             align-items: center;
             justify-content: center;
-            color: var(--color-white);
+            color: var(--color-dark-red);
+            font-weight: 600;
         }
     }
 }
@@ -49,7 +50,7 @@
         }
 
         &__cart {
-            width: 30px;
+            width: 35px;
         }
 
         &__relative {
@@ -57,19 +58,16 @@
 
             &__count {
                 position: absolute;
-                font-size: 14px;
-                box-shadow: 0px 0px 4px var(--color-white);
+                font-size: 13px;
                 z-index: 100;
-                width: 23px;
-                height: 23px;
+                width: 25px;
+                height: 25px;
                 border-radius: 350px;
-                background-color: var(--color-red);
                 top: -5px;
                 right: -10px;
                 display: flex;
                 align-items: center;
                 justify-content: center;
-                color: var(--color-white);
             }
         }
     }

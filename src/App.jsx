@@ -7,7 +7,7 @@ import Header from './components/Header/Header'
 function App() {
     useEffect(() => {
         AOS.init({
-            duration: 600,
+            duration: 450,
             once: true,
         })
     }, [])

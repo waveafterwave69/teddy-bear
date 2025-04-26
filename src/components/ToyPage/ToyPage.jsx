@@ -25,7 +25,14 @@ export default function ToyPage() {
 
     useEffect(() => {
         getToys()
+        window.location.hash = '#top'
     }, [])
+
+    window.scrollTo({
+        top: 0,
+        left: 0,
+        behavior: 'smooth',
+    })
 
     function addToy() {
         dispatch(
@@ -54,7 +61,7 @@ export default function ToyPage() {
     }
 
     function minusOneToy() {
-        if (storeData[2].count == 1) {
+        if (storeData[id].count == 1) {
             dispatch(removePersonToFav(id))
         } else {
             dispatch(
@@ -74,15 +81,16 @@ export default function ToyPage() {
         <>
             <div className={styles.item}>
                 <button
-                    data-aos="fade-right"
+                    data-aos="fade-down"
                     className={styles.item__prevButton}
-                    onClick={() => navigate(-1)}
+                    onClick={() => navigate(-2)}
                 >
                     Назад
                 </button>
-                <div className={styles.item__row} data-aos="fade-left">
+                <div className={styles.item__row}>
                     <Cart />
-                    <div className={styles.item__content}>
+
+                    <div className={styles.item__content} data-aos="fade-left">
                         <div className={styles.relative}>
                             <img
                                 src={toys.img}
