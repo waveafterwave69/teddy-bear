@@ -3,9 +3,11 @@
 }
 
 .card {
+    z-index: 10000;
     position: sticky;
     top: 30px;
-    width: 100%;
+    width: 334px;
+    right: 5000px;
 
     &__title {
         display: flex;
