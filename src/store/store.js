@@ -1,11 +1,8 @@
-import { createStore } from 'redux'
-import rootReducer from './reducers'
-import { setLocalStorage } from '../utils/localStorage'
+import { configureStore } from '@reduxjs/toolkit'
+import storeSlice from './slices/storeSlice'
 
-const store = createStore(rootReducer)
-
-store.subscribe(() => {
-    setLocalStorage('store', store.getState().favReducer)
+export const store = configureStore({
+    reducer: {
+        store: storeSlice,
+    },
 })
-
-export default store

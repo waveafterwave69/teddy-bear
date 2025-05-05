@@ -1,5 +1,5 @@
 import { useEffect } from 'react'
-import CartPagee from '../components/CartPagee/CartPagee'
+import CartPageEl from '../components/CartPageEl/CartPageEl'
 
 export default function CartPage() {
     useEffect(() => {
@@ -9,7 +9,7 @@ export default function CartPage() {
     return (
         <>
             <div className="container" style={{ marginTop: '30px' }}>
-                <CartPagee />
+                <CartPageEl />
             </div>
         </>
     )

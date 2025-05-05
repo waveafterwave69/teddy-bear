@@ -2,10 +2,7 @@ import { useEffect, useRef, useState } from 'react'
 import styles from './PromoList.module.scss'
 import searchInput from '../../img/search.svg'
 import { json } from '../../api/data'
-import ListIem from '../ListIem/ListIem'
-
-let firstEl = 0
-let lastEl = 12
+import ListItem from '../ListItem/ListItem'
 
 export default function PromoList() {
     const [searchTerm, setSearchTerm] = useState('')
@@ -15,13 +12,7 @@ export default function PromoList() {
     const getToys = () => {
         const json2 = JSON.parse(json)
         const data = json2.catalogs
-        // const data = json2.catalogs.slice(firstEl, lastEl)
         setToys(data)
-    }
-
-    const addToys = () => {
-        lastEl += 12
-        getToys()
     }
 
     useEffect(() => {
@@ -63,19 +54,18 @@ export default function PromoList() {
                     {searchTerm.length === 0 &&
                         toys.map((toy, index) => (
                             <li key={index} className={styles.list__item}>
-                                <ListIem {...toy} />
+                                <ListItem {...toy} />
                             </li>
                         ))}
                     {searchResults.length > 0 &&
                         searchResults.map((toy, index) => (
                             <li key={index} className={styles.list__item}>
-                                <ListIem {...toy} />
+                                <ListItem {...toy} />
                             </li>
                         ))}
                     {(searchResults.length == 0) & (searchTerm.length !== 0) ? (
                         <p>Ничего не найдено</p>
                     ) : null}
-                    {/* <button onClick={addToys}>Ещё</button> */}
                 </ul>
             </div>
         </>

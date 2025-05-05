@@ -7,18 +7,17 @@ import { NavLink } from 'react-router-dom'
 import { useEffect, useState } from 'react'
 
 export default function Header() {
-    const storeData = useSelector((state) => state.favReducer)
-    const [totalCount, setTotalCount] = useState(0)
-    const arr = Object.entries(storeData)
-    let total = 0
+    const storeData = useSelector((state) => state.store)
+    // const [totalCount, setTotalCount] = useState(0)
+    // const arr = Object.entries(storeData)
+    // let total = 0
+    // useEffect(() => {
+    //     arr.forEach((el) => {
+    //         total += Number(el[1].count)
+    //     })
 
-    useEffect(() => {
-        arr.forEach((el) => {
-            total += Number(el[1].count)
-        })
-
-        setTotalCount(total)
-    })
+    //     setTotalCount(total)
+    // })
 
     return (
         <>
@@ -39,11 +38,11 @@ export default function Header() {
                                 className={styles.header__cart}
                                 alt="Корзина"
                             />
-                            {totalCount > 0 && (
+                            {/* {totalCount > 0 && (
                                 <div className={styles.header__relative__count}>
                                     {totalCount}
                                 </div>
-                            )}
+                            )} */}
                         </NavLink>
                     </div>
                 </div>
