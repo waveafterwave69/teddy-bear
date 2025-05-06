@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react'
+import { useEffect } from 'react'
 import styles from './ToyPage.module.scss'
 import { useNavigate } from 'react-router-dom'
 import { json } from '../../api/data'
@@ -6,69 +6,25 @@ import Cart from '../Cart/Cart'
 import { useDispatch, useSelector } from 'react-redux'
 import { removePersonToFav, setPersonToFav } from '../../store/actions'
 import { useParams } from 'react-router'
+import { addItem, minusItem } from '../../store/slices/storeSlice'
 
 export default function ToyPage() {
     const { id } = useParams()
     const navigate = useNavigate()
 
-    const dispatch = useDispatch()
-
-    let storeData = useSelector((state) => state.favReducer)
-
-    const [toys, setToys] = useState([])
-
-    const getToys = () => {
-        const json2 = JSON.parse(json)
-        const data = json2.catalogs[id - 1]
-        setToys(data)
-    }
-
     useEffect(() => {
-        getToys()
         window.location.hash = '#top'
     }, [])
 
+    const dispatch = useDispatch()
+    const storeData = useSelector((state) => state.store)
+
     function addToy() {
-        dispatch(
-            setPersonToFav({
-                [toys.id]: {
-                    name: toys.name,
-                    price: toys.price,
-                    count: toys.count,
-                    img: toys.img,
-                },
-            })
-        )
+        dispatch(addItem(id))
     }
 
-    function addOneToy() {
-        dispatch(
-            setPersonToFav({
-                [toys.id]: {
-                    name: toys.name,
-                    price: Number(storeData[id].price) + Number(toys.price),
-                    count: Number(storeData[id].count) + 1,
-                    img: toys.img,
-                },
-            })
-        )
-    }
-
-    function minusOneToy() {
-        if (storeData[id].count == 1) {
-            dispatch(removePersonToFav(id))
-        } else {
-            dispatch(
-                setPersonToFav({
-                    [toys.id]: {
-                        name: toys.name,
-                        price: Number(storeData[id].price) - Number(toys.price),
-                        count: Number(storeData[id].count) - 1,
-                        img: toys.img,
-                    },
-                })
-            )
-        }
+    function minusToy() {
+        dispatch(minusItem(id))
     }
 
     return (
@@ -87,29 +43,35 @@ export default function ToyPage() {
                     <div className={styles.item__content} data-aos="fade-left">
                         <div className={styles.relative}>
                             <img
-                                src={toys.img}
+                                src={storeData.store.catalogs[id - 1].img}
                                 alt=""
                                 className={styles.item__content__img}
                             />
-                            {storeData[id] && (
+                            {storeData.store.catalogs[id - 1].count > 0 && (
                                 <div className={styles.count}>
-                                    {storeData[id].count}
+                                    {storeData.store.catalogs[id - 1].count}
                                 </div>
                             )}
                         </div>
                         <div style={styles.item__content__text}>
                             <h1 className={styles.item__content__title}>
                                 <p>Мягкая игрушка </p>
-                                <p>{toys.name}.</p>
+                                <p>{storeData.store.catalogs[id - 1].name}.</p>
                             </h1>
                             <p className={styles.item__content__price}>
-                                {toys.price}₽
+                                {storeData.store.catalogs[id - 1].price}₽
                             </p>
                             <div className={styles.item__content__params}>
-                                <p>Высота: {toys.height}</p>
-                                <p>Ширина: {toys.width}</p>
+                                <p>
+                                    Высота:{' '}
+                                    {storeData.store.catalogs[id - 1].height}
+                                </p>
+                                <p>
+                                    Ширина:{' '}
+                                    {storeData.store.catalogs[id - 1].width}
+                                </p>
                             </div>
-                            {!storeData[id] ? (
+                            {storeData.store.catalogs[id - 1].count === 0 ? (
                                 <button
                                     className={styles.item__button}
                                     onClick={addToy}
@@ -119,16 +81,16 @@ export default function ToyPage() {
                             ) : (
                                 <div className={styles.item__plusminus}>
                                     <button
-                                        onClick={minusOneToy}
+                                        onClick={minusToy}
                                         className={styles.item__plusminus__text}
                                     >
                                         -
                                     </button>
                                     <p style={{ fontWeight: '600' }}>
-                                        {storeData[id].count}
+                                        {storeData.store.catalogs[id - 1].count}
                                     </p>
                                     <button
-                                        onClick={addOneToy}
+                                        onClick={addToy}
                                         className={styles.item__plusminus__text}
                                     >
                                         +
