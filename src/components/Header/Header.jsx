@@ -1,23 +1,19 @@
 import styles from './Header.module.scss'
-import { useDispatch, useSelector } from 'react-redux'
+import { useSelector } from 'react-redux'
 import headerLogo from '../../img/header-logo.svg'
 import cartImg from '../../img/cart.svg'
 
 import { NavLink } from 'react-router-dom'
-import { useEffect, useState } from 'react'
 
 export default function Header() {
     const storeData = useSelector((state) => state.store)
-    // const [totalCount, setTotalCount] = useState(0)
-    // const arr = Object.entries(storeData)
-    // let total = 0
-    // useEffect(() => {
-    //     arr.forEach((el) => {
-    //         total += Number(el[1].count)
-    //     })
+    const totalCountArray = storeData.store.catalogs.filter(
+        (el) => el.count > 0
+    )
 
-    //     setTotalCount(total)
-    // })
+    const totalCount = totalCountArray.reduce((acc, el) => {
+        return acc + el.count
+    }, 0)
 
     return (
         <>
@@ -38,11 +34,11 @@ export default function Header() {
                                 className={styles.header__cart}
                                 alt="Корзина"
                             />
-                            {/* {totalCount > 0 && (
+                            {totalCountArray.length > 0 && (
                                 <div className={styles.header__relative__count}>
                                     {totalCount}
                                 </div>
-                            )} */}
+                            )}
                         </NavLink>
                     </div>
                 </div>
